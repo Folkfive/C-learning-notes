@@ -8,10 +8,10 @@ int main() {
     double c;
     ifstream inFile;
     ofstream outFile;
-    inFile.open("input.txt");
-    outFile.open("output.txt");
-    inFile >> a >> b >> c;
-    outFile << c << b << a;
+    fstream binaryio("P:\\Github\\city.bat", ios::in | ios::binary);
+    double array[5] = {1.1, 1.2, 1.3, 1.4, 1.5};
+    binaryio.write(reinterpret_cast<char*>(&array), sizeof( array) );
+    binaryio.close();
     inFile.close();
     outFile.close();
 }
